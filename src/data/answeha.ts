@@ -3,11 +3,15 @@
 //    Change text, add photos, swap music — all from this file.
 // ─────────────────────────────────────────────────────────────
 
+const yearMet = 2017;
+const currentYear = typeof window !== "undefined" ? new Date().getFullYear() : 2026;
+const yearsKnown = currentYear - yearMet;
+
 export const siteConfig = {
   name: "Anwesha",
   birthday: "13 • 09",
-  birthdayFull: "13 • 09 • 2025",
-  yearMet: 2017,
+  birthdayFull: `13 • 09 • ${currentYear}`,
+  yearMet,
   siteTitle: "13:09 — A Little World for Anwesha",
   siteDescription:
     "A birthday gift for someone who holds a very special place.",
@@ -36,12 +40,12 @@ export interface TimelineEntry {
 
 export const timelineEntries: TimelineEntry[] = [
   {
-    year: 2017,
+    year: yearMet,
     title: "First Met",
     description: "The year our paths crossed.",
   },
   {
-    year: 2025,
+    year: currentYear,
     title: "Present",
     description: "Celebrating you and all the memories made along the way.",
   },
@@ -55,9 +59,9 @@ export interface MilestoneEntry {
 
 export const milestones: MilestoneEntry[] = [
   {
-    number: "8",
+    number: String(yearsKnown),
     label: "years of knowing you",
-    detail: "Since 2017. Through seasons, silences, and everything in between.",
+    detail: `Since ${yearMet}. Through seasons, silences, and everything in between.`,
   },
   {
     number: "∞",
